@@ -6,7 +6,7 @@ const textareaEl = document.querySelector('textarea');
 
 const formData = {
    email: '',
-   messsage: '',
+   message: '',
 }
 
 const LOCAL_STOTAGE_KEY = "feedback-form-state";
@@ -17,10 +17,6 @@ fillForm();
 
 formEl.addEventListener('input', throttle(e => {
    //================================= Якесь таке вирішення, як нижче, але зробити так як казав Репета, не вийшло
-//   const formData = {
-//   email: formEl.elements.email.value,
-//   message: formEl.elements.message.value,
-//};
    formData.email = formEl.elements.email.value;
    formData.message = formEl.elements.message.value;
    //formData[e.target.name] = e.target.value;  ======================== тобто ось так
