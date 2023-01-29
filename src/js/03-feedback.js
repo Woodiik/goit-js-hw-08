@@ -4,6 +4,11 @@ const formEl = document.querySelector('.feedback-form');
 const inputEl = document.querySelector('input');
 const textareaEl = document.querySelector('textarea');
 
+const formData = {
+   email: '',
+   messsage: '',
+}
+
 const LOCAL_STOTAGE_KEY = "feedback-form-state";
 
 fillForm();
@@ -12,10 +17,12 @@ fillForm();
 
 formEl.addEventListener('input', throttle(e => {
    //================================= Якесь таке вирішення, як нижче, але зробити так як казав Репета, не вийшло
-   const formData = {
-   email: formEl.elements.email.value,
-   message: formEl.elements.message.value,
-};
+//   const formData = {
+//   email: formEl.elements.email.value,
+//   message: formEl.elements.message.value,
+//};
+   formData.email = formEl.elements.email.value;
+   formData.message = formEl.elements.message.value;
    //formData[e.target.name] = e.target.value;  ======================== тобто ось так
    localStorage.setItem(LOCAL_STOTAGE_KEY, JSON.stringify(formData));
 }, 500));
